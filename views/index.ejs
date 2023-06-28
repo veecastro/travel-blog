@@ -6,6 +6,13 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>Diary <%= title %></p>
+    <form action="/destinations" method="GET">
+      <button type="submit">Show All Destinations</button>
+
+      <form action="/new" method="GET">
+        <button type="submit">Create New Destination</button>
+    </form>
+
   </body>
 </html>

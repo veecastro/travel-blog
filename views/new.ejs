@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<h2>New Destination</h2>
+<form action="/destinations" method="POST">
+    <label for="country">Country</label>
+    <input type="text" name="country" id="country" />
+    <br />
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" />
+    <br />
+    <label for="activity">Activity</label>
+    <input type="text" name="activity" id="activity" />
+    <br />
+    <label for="foods">Foods</label>
+    <input type="text" name="foods" id="foods" />
+    <br />
+    <label for="photos">Photos</label>
+    <input type="text" name="photos" id="photos" />
+    <br />
+    <label for="tips">Tips</label>
+    <input type="text" name="tips" id="tips" />
+    <br />
+    <button type="submit">Create Destination</button>
+
+
+</form>
+
+<p><%= errorMSG %></p>
+
+<%- include('../partials/footer') %>
+```
+
+
+
+
