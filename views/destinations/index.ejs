@@ -1,0 +1,63 @@
+<%- include('../partials/header') %>
+
+<h2>All destinations</h2>
+
+<form action="/destinations" method="GET">
+  <button type="submit">Show All Destinations</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th>City</th>
+      <th>Activities</th>
+      <th>Foods</th>
+      <th>Photos</th>
+      <th>Tips</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% destinations.forEach(function(destination) { %>
+      <tr>
+        <td><%= destination.country %></td>
+        <td><%= destination.city %></td>
+        <td>
+          <% destination.activities.forEach(function(activity) { %>
+            <div>Name: <%= activity.name %></div>
+            <div>Type: <%= activity.type %></div>
+            <div>Image: <%= activity.image %></div>
+          <% }) %>
+        </td>
+        <td>
+          <% destination.foods.forEach(function(food) { %>
+            <div>Name: <%= food.name %></div>
+            <div>Cuisine: <%= food.cuisine %></div>
+            <div>Image: <%= food.image %></div>
+          <% }) %>
+        </td>
+        <td>
+          <% destination.photos.forEach(function(photo) { %>
+            <div>Image: <%= photo.image %></div>
+            <div>Caption: <%= photo.caption %></div>
+          <% }) %>
+        </td>
+        <td>
+          <% destination.tips.forEach(function(tip) { %>
+            <div>Tip: <%= tip.tip %></div>
+          <% }) %>
+        </td>
+        <td><a href="/destinations/<%= destination.id %>/edit">Edit</a></td>
+        <td>
+          <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

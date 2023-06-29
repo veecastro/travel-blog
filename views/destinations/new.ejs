@@ -1,0 +1,95 @@
+<%- include('../partials/header') %>
+
+<h2>New Destination</h2>
+<form action="/destinations" method="POST">
+  
+  <label for="country">Country</label>
+  <input type="text" name="country" id="country" required />
+  <br />
+  <label for="city">City</label>
+  <input type="text" name="city" id="city" required />
+  <br />
+  <label for="date">Date</label>
+  <input type="date" name="date" id="date" required />
+  <br />
+  <label for="image">Image URL</label>
+  <input type="text" name="image" id="image" required />
+  <br />
+
+  <h3>Activities</h3>
+  <div id="activities-container">
+    <div class="activity">
+      <label for="activity-name-0">Name</label>
+      <input type="text" name="activities[0][name]" id="activity-name-0" required />
+      <br />
+      <label for="activity-type-0">Type</label>
+      <input type="text" name="activities[0][type]" id="activity-type-0" required />
+      <br />
+
+      <label for="activity-image-0">Image URL</label>
+      <input type="text" name="activities[0][image]" id="activity-image-0" required />
+      <br />
+    </div>
+  </div>
+  <button type="button" onclick="addActivity()">Add Activity</button>
+  <br />
+
+  <h3>Photos</h3>
+  <div id="photos-container">
+    <div class="photo">
+      <label for="photo-image-0">Image URL</label>
+      <input type="text" name="photos[0][image]" id="photo-image-0" required />
+      <br />
+      <label for="photo-caption-0">Caption</label>
+      <input type="text" name="photos[0][caption]" id="photo-caption-0" required />
+      <br />
+    </div>
+  </div>
+  <button type="button" onclick="addPhoto()">Add Photo</button>
+  <br />
+
+  <h3>Travel Tips</h3>
+  <div id="tips-container">
+    <div class="tip">
+      <label for="tip-0">Tip</label>
+      <input type="text" name="tips[0][tip]" id="tip-0" required />
+      <br />
+    </div>
+  </div>
+  <button type="button" onclick="addTip()">Add Tip</button>
+  <br />
+
+  <h3>Foods</h3>
+  <div id="foods-container">
+    <div class="food">
+      <label for="food-name-0">Name</label>
+      <input type="text" name="foods[0][name]" id="food-name-0" required />
+      <br />
+      <label for="food-cuisine-0">Cuisine</label>
+      <input type="text" name="foods[0][cuisine]" id="food-cuisine-0" required />
+        <br />
+        <label for="food-image-0">Image URL</label>
+        <input type="text" name="foods[0][image]" id="food-image-0" required />
+        <br />
+        </div>
+        </div>
+        <button type="button" onclick="addFood()">Add Food</button>
+        <br />
+
+        <button type="submit">Create Destination</button>
+        </form>
+
+        <%- include('../partials/footer') %>
+        <!-- <script>
+        let activityCount = 1;
+        let photoCount = 1;
+        let tipCount = 1;
+        let foodCount = 1; -->
+        
+
+
+
+
+
+
+
