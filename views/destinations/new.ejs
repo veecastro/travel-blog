@@ -1,7 +1,29 @@
 <%- include('../partials/header') %>
 
 <h2>New Destination</h2>
-<form action="/destinations" method="POST">
+<form action="/destinations" method="POST" class="destination-form">
+  <div class="mb-3">
+    <label for="country" class="form-label">Country</label>
+    <input type="text" name="country" id="country" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="city" class="form-label">City</label>
+    <input type="text" name="city" id="city" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="date" class="form-label">Date</label>
+    <input type="date" name="date" id="date" class="form-control" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Photo</label>
+    <input type="text" name="image" id="image" class="form-control" required />
+  </div>
+
+<!-- <h2>New Destination</h2>
+<form action="/destinations" method="POST" class="edit-form">
   
   <label for="country">Country</label>
   <input type="text" name="country" id="country" required />
@@ -14,9 +36,9 @@
   <br />
   <label for="image">Image URL</label>
   <input type="text" name="image" id="image" required />
-  <br />
+  <br /> -->
 
-  <h3>Activities</h3>
+  <!-- <h3>Activities</h3>
   <div id="activities-container">
     <div class="activity">
       <label for="activity-name-0">Name</label>
@@ -74,10 +96,12 @@
         </div>
         </div>
         <button type="button" onclick="addFood()">Add Food</button>
-        <br />
+        <br /> -->
 
-        <button type="submit">Create Destination</button>
-        </form>
+        <button type="submit" class="btn btn-create">Create Destination</button>
+</form>
+        <!-- <button type="submit">Create Destination</button>
+        </form> -->
 
         <%- include('../partials/footer') %>
         <!-- <script>

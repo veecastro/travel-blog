@@ -1,12 +1,27 @@
 <%- include('../partials/header') %>
 
-<h2>All destinations</h2>
+<h2>All Destinations</h2>
 
-<!-- <form action="/destinations" method="GET">
+<div class="row">
+  <% destinations.forEach(function(destination) { %>
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= destination.country %></h5>
+          <h6 class="card-subtitle mb-2 text-muted"><%= destination.city %></h6>
+          <a href="/destinations/<%= destination.id %>/edit" class="btn btn-primary">Edit</a>
+          <a href="/destinations/<%= destination.id %>/show" class="btn btn-secondary">Details</a>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>
+
+<!-- form action="/destinations" method="GET">
   <button type="submit">Show All Destinations</button>
-</form> -->
+</form>  -->
 
-<table>
+ <!-- <table>
   <thead>
     <tr>
       <th>Country</th>
@@ -19,8 +34,8 @@
       <th>Delete</th>
     </tr>
   </thead>
-  <tbody>
-    <% destinations.forEach(function(destination) { %>
+  <tbody> -->
+    <!-- <% destinations.forEach(function(destination) { %>
       <tr>
         <td><%= destination.country %></td>
         <td><%= destination.city %></td>
@@ -54,13 +69,16 @@
         <td>
           <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
+ -->
 
-
-          </form>
+          <!-- </form>
         </td>
       </tr>
     <% }) %>
   </tbody>
 </table>
+
+ <%- include('../partials/footer') %>  -->
+
 
 <%- include('../partials/footer') %>
