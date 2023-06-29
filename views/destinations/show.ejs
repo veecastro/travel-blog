@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<h2>Destination Details</h2>
+
+<div>
+  <h3>Country: <%= destination.country %></h3>
+  <h3>City: <%= destination.city %></h3>
+  <h3>image: </h3>
+  
+  <h3>Activities:</h3>
+  <% destination.activities.forEach(function(activity) { %>
+    <div>Name: <%= activity.name %></div>
+    <div>Type: <%= activity.type %></div>
+    <div>Image: <%= activity.image %></div>
+  <% }) %>
+  
+  <h3>Foods:</h3>
+  <% destination.foods.forEach(function(food) { %>
+    <div>Name: <%= food.name %></div>
+    <div>Cuisine: <%= food.cuisine %></div>
+    <div>Image: <%= food.image %></div>
+  <% }) %>
+  
+   <h3>Photos:</h3>
+  <% destination.photos.forEach(function(photo) { %>
+     <div>Image: <%= photo.image %></div> 
+    <div>Caption: <%= photo.caption %></div>
+  <% }) %> 
+  
+  <h3>Tips:</h3>
+  <% destination.tips.forEach(function(tip) { %>
+    <div>Tip: <%= tip.tip %></div>
+  <% }) %> 
+</div>
+
+<a href="/destinations/<%= destination.id %>/edit">Edit</a>
+<%- include('../partials/footer') %>

@@ -71,17 +71,18 @@ function destinationNewPost(req, res) {
     try {
       await Destination.findByIdAndUpdate(req.params.id, req.body);
       const destinations = await Destination.find({});
-      res.render('destinations/index', { title: 'All Destinations', destinations });
+      res.render('destinations/index', { destinations, title: 'all destinations' });
     } catch (err) {
       console.log(err);
-      res.render('error', { errorMsg: 'Error updating destination' });
+      res.render('error', { errorMsg: 'Error updating destination', error: err });
     }
   }
 
      async function destinationDeletePost(req, res) {
         try {
             await Destination.findByIdAndRemove(req.params.id);
-            res.redirect('/destinations/index', { title: 'All Destinations', destinations });
+            // const destinations = await Destination.find({});
+            res.redirect('/destinations/index');
         } catch (err) {
             console.log(err);
             res.render('error', { errorMsg: 'Error deleting destination' });

@@ -1,0 +1,97 @@
+<%- include('../partials/header') %>
+
+<h3>Edit Details</h3>
+<form action="/destinations/<%= destination.id %>?_method=PUT" method="POST">
+
+    <label for="country">Country</label>
+    <input type="text" name="country" id="country" value="<%= destination.country %>" required />
+    <br />
+    <label for="city">City</label>
+    <input type="text" name="city" id="city" value="<%= destination.city %>" required />
+    <br />
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date" value="<%= destination.date.toISOString().substr(0, 10) %>" required />
+    <br />
+    <label for="image">Image URL</label>
+    <input type="text" name="image" id="image" value="<%= destination.image %>" required />
+    <br />
+  
+    <h3>Activities</h3>
+    <div id="activities-container">
+      <% destination.activities.forEach(function(activity, index) { %>
+      <div class="activity">
+        <label for="activity-name-<%= index %>">Name</label>
+        <input type="text" name="activities[<%= index %>][name]" id="activity-name-<%= index %>" value="<%= activity.name %>" required />
+        <br />
+        <label for="activity-type-<%= index %>">Type</label>
+        <input type="text" name="activities[<%= index %>][type]" id="activity-type-<%= index %>" value="<%= activity.type %>" required />
+        <br />
+        <label for="activity-image-<%= index %>">Image URL</label>
+        <input type="text" name="activities[<%= index %>][image]" id="activity-image-<%= index %>" value="<%= activity.image %>" required />
+        <br />
+      </div>
+      <% }) %>
+    </div>
+  
+    <h3>Foods</h3>
+    <div id="foods-container">
+      <% destination.foods.forEach(function(food, index) { %>
+      <div class="food">
+        <label for="food-name-<%= index %>">Name</label>
+        <input type="text" name="foods[<%= index %>][name]" id="food-name-<%= index %>" value="<%= food.name %>" required />
+        <br />
+        <label for="food-cuisine-<%= index %>">Cuisine</label>
+        <input type="text" name="foods[<%= index %>][cuisine]" id="food-cuisine-<%= index %>" value="<%= food.cuisine %>" required />
+        <br />
+        <label for="food-image-<%= index %>">Image URL</label>
+        <input type="text" name="foods[<%= index %>][image]" id="food-image-<%= index %>" value="<%= food.image %>" required />
+        <br />
+      </div>
+      <% }) %>
+    </div>
+
+    <h3>Photos</h3>
+    <div id="photos-container">
+      <% destination.photos.forEach(function(photo, index) { %>
+      <div class="photo">
+        <label for="photo-image-<%= index %>">Image URL</label>
+        <input type="text" name="photos[<%= index %>][image]" id="photo-image-<%= index %>" value="<%= photo.image %>" required />
+        <br />
+        <label for="photo-caption-<%= index %>">Caption</label>
+        <input type="text" name="photos[<%= index %>][caption]" id="photo-caption-<%= index %>" value="<%= photo.caption %>" required />
+        <br />
+      </div>
+      <% }) %>
+    </div>
+
+    <h3>Travel Tips</h3>
+    <div id="tips-container">
+      <% destination.tips.forEach(function(tip, index) { %>
+      <div class="tip">
+        <label for="tip-<%= index %>">Tip</label>
+        <input type="text" name="tips[<%= index %>][tip]" id="tip-<%= index %>" value="<%= tip.tip %>" required />
+        <br />
+      </div>
+      <% }) %>
+    </div>
+
+    <button type="submit">Update</button>
+    </form>
+    <br />
+
+    <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+
+<%- include('../partials/footer') %>
+
+
+
+  
+
+
+
+
+
+
+
