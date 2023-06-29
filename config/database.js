@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true, debug: true})
-.then(() => console.log('MongoDB connected...'))
-.catch((err) => console.log(err));
+mongoose.connect(process.env.DATABASE_URL) 
+
 
 
 // shortcut to mongoose.connection object

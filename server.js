@@ -4,8 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config();
+require('./config/database');
+
+
 var indexRouter = require('./routes/index');
 var destinationsRouter = require('./routes/destinations');
+const methodOverride = require('method-override');
 
 var app = express();
 
@@ -18,6 +23,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/destinations', destinationsRouter);
@@ -37,5 +44,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;

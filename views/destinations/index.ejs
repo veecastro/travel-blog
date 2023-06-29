@@ -2,9 +2,9 @@
 
 <h2>All destinations</h2>
 
-<form action="/destinations" method="GET">
+<!-- <form action="/destinations" method="GET">
   <button type="submit">Show All Destinations</button>
-</form>
+</form> -->
 
 <table>
   <thead>
@@ -50,9 +50,12 @@
           <% }) %>
         </td>
         <td><a href="/destinations/<%= destination.id %>/edit">Edit</a></td>
+        <td><a href="/destinations/<%= destination.id %>/show">Details</a></td>
         <td>
           <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
+
+
           </form>
         </td>
       </tr>

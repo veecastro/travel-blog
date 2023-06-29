@@ -7,10 +7,10 @@ const destinationCtrl = require('../controllers/destinations');
 
 router.get('/index', destinationCtrl.destinationList);
 router.get('/new', destinationCtrl.destinationNewPost);
-// router.get('/:id', destinationCtrl.destinationSingle);
+router.get('/:id/show', destinationCtrl.destinationShowPost);
 router.post('/', destinationCtrl.destinationCreatePost);
-// router.delete('/:id', destinationCtrl.destinationDeletePost);
-// router.get('/:id/edit', destinationCtrl.destinationUpdatePost);
-// router.put('/:id', destinationCtrl.destinationEditPost);
+router.delete('/:id', destinationCtrl.destinationDeletePost);
+router.get('/:id/edit', destinationCtrl.destinationEditPost);
+router.put('/:id', destinationCtrl.destinationUpdatePost)
 
 module.exports = router;
