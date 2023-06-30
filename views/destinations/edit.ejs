@@ -20,7 +20,7 @@
     </div>
 
     <div class="form-group">
-      <label for="image">Image URL</label>
+      <label for="image">Photos</label>
       <input type="text" class="form-control" name="image" id="image" value="<%= destination.image %>" required>
     </div>
   
@@ -83,13 +83,14 @@
       <% }) %>
     </div> -->
 
-    
+    <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-delete">Delete</button>
+   
     <button type="submit" class="btn btn-update">Update</button>
 </form>
+  </form>
 
-<form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
-  <button type="submit" class="btn btn-delete">Delete</button>
-</form>
+
 
 
 
