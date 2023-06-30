@@ -19,10 +19,27 @@
       <input type="date" class="form-control" name="date" id="date" value="<%= destination.date.toISOString().substr(0, 10) %>" required>
     </div>
 
-    <div class="form-group">
+    <h3>Photos</h3>
+    <div id="photos-container">
+      <% destination.photos.forEach(function(photo, index) { %>
+      <div class="photo">
+        <label for="photo-image-<%= index %>">Image URL</label>
+        <input type="text" class="form-control" name="photos[<%= index %>][image]" id="photo-image-<%= index %>" value="<%= photo.image %>" required />
+        <br />
+        <label for="photo-caption-<%= index %>">Caption</label>
+        <input type="text" class="form-control" name="photos[<%= index %>][caption]" id="photo-caption-<%= index %>" value="<%= photo.caption %>" required />
+        <br />
+      </div>
+      <div>
+        <img src="<%= photo.image %>" alt="Photo">
+        <div>Caption: <%= photo.caption %></div>
+      </div>
+      <% }) %>
+
+    <!-- <div class="form-group">
       <label for="image">Photos</label>
       <input type="text" class="form-control" name="image" id="image" value="<%= destination.image %>" required>
-    </div>
+    </div> -->
   
     <!-- <h3>Activities</h3>
     <div id="activities-container">
@@ -70,9 +87,9 @@
         <br />
       </div>
       <% }) %>
-    </div>
+    </div> -->
 
-    <h3>Travel Tips</h3>
+    <!-- <h3>Travel Tips</h3>
     <div id="tips-container">
       <% destination.tips.forEach(function(tip, index) { %>
       <div class="tip">
@@ -81,14 +98,16 @@
         <br />
       </div>
       <% }) %>
-    </div> -->
+    </div>  -->
 
-    <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
-      <button type="submit" class="btn btn-delete">Delete</button>
+    
    
     <button type="submit" class="btn btn-update">Update</button>
+    <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-delete">Delete</button>
 </form>
   </form>
+</div>
 
 
 

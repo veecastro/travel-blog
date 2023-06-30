@@ -17,10 +17,76 @@
     <input type="date" name="date" id="date" class="form-control" required />
   </div>
 
-  <div class="mb-3">
+  <!-- <div class="mb-3">
     <label for="image" class="form-label">Photo</label>
     <input type="text" name="image" id="image" class="form-control" required />
+  </div> -->
+
+  <h3>Photos</h3>
+  <div id="photos-container">
+    <div class="photo-form">
+      <label for="photo-image-0" class="form-label">Photo URL</label>
+      <input type="text" name="photos[0][image]" id="photo-image-0" class="form-control" required />
+      <br />
+      <label for="photo-caption-0" class="form-label">Caption</label>
+      <input type="text" name="photos[0][caption]" id="photo-caption-0" class="form-control" required />
+      <br />
+    </div>
   </div>
+  <button type="button" onclick="addPhoto()" class="btn btn-primary">Add Photo</button>
+  <br />
+  <script>
+    function addPhoto() {
+  const photosContainer = document.getElementById('photos-container');
+
+  // Create a new photo form element
+  const photoForm = document.createElement('div');
+  photoForm.className = 'photo-form';
+
+  // Generate unique IDs for the new input fields
+  const index = photosContainer.getElementsByClassName('photo-form').length;
+  const imageId = `photo-image-${index}`;
+  const captionId = `photo-caption-${index}`;
+
+  // Create the photo URL input field
+  const imageLabel = document.createElement('label');
+  imageLabel.setAttribute('for', imageId);
+  imageLabel.className = 'form-label';
+  imageLabel.textContent = 'Photo URL';
+
+  const imageInput = document.createElement('input');
+  imageInput.setAttribute('type', 'text');
+  imageInput.setAttribute('name', `photos[${index}][image]`);
+  imageInput.setAttribute('id', imageId);
+  imageInput.className = 'form-control';
+  imageInput.required = true;
+
+  // Create the caption input field
+  const captionLabel = document.createElement('label');
+  captionLabel.setAttribute('for', captionId);
+  captionLabel.className = 'form-label';
+  captionLabel.textContent = 'Caption';
+
+  const captionInput = document.createElement('input');
+  captionInput.setAttribute('type', 'text');
+  captionInput.setAttribute('name', `photos[${index}][caption]`);
+  captionInput.setAttribute('id', captionId);
+  captionInput.className = 'form-control';
+  captionInput.required = true;
+
+  // Append the input fields to the photo form element
+  photoForm.appendChild(imageLabel);
+  photoForm.appendChild(imageInput);
+  photoForm.appendChild(document.createElement('br'));
+  photoForm.appendChild(captionLabel);
+  photoForm.appendChild(captionInput);
+  photoForm.appendChild(document.createElement('br'));
+
+  // Append the photo form element to the photos container
+  photosContainer.appendChild(photoForm);
+}
+
+  </script>
 
 <!-- <h2>New Destination</h2>
 <form action="/destinations" method="POST" class="edit-form">

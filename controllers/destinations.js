@@ -49,6 +49,14 @@ function destinationNewPost(req, res) {
         tips: [],
         foods: []
       };
+
+      // for (let i = 0; i < req.body.photos.length; i++) {
+      //   const photo = {
+      //     image: req.body.photos[i].image,
+      //     caption: req.body.photos[i].caption
+      //   };
+      //   newDestination.photos.push(photo);
+      // }
   
       await Destination.create(newDestination);
       res.redirect('/destinations/index');
