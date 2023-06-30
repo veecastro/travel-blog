@@ -100,13 +100,14 @@
       <% }) %>
     </div>  -->
 
-    
+      <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-delete">Delete</button>
    
     <button type="submit" class="btn btn-update">Update</button>
-    <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
-      <button type="submit" class="btn btn-delete">Delete</button>
-</form>
   </form>
+  
+</form>
+  
 </div>
 
 
