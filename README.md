@@ -27,7 +27,7 @@ The Travelogue App is a comprehensive platform designed for avid travelers to do
 - Express
 - EJS
 
-### Next Steps
+### Next Steps:
 - Activity Tracking: Add and track travel activities with location, date, duration, and notes.
 - Food Diary: Document dining experiences with ratings and photos.
 - Travel Tips: Share valuable insights, packing suggestions, and destination-specific recommendations.
