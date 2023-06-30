@@ -21,7 +21,7 @@
   color: #1e472b;
   font-size: 30px;
   letter-spacing: 3px;
-  
+
   display: block;
   text-align: center;
   margin-bottom: 10px;
@@ -37,9 +37,8 @@
 }
 
 .row {
-  background-color: rgba(250, 235, 215, 0.088); 
+  background-color: rgba(250, 235, 215, 0.088);
 }
-
 
 h2 {
   font-size: 50px;
@@ -49,7 +48,6 @@ h2 {
   letter-spacing: 5px;
   text-align: center;
 }
-
 
 .card {
   background-color: rgba(250, 235, 215, 0.178);
@@ -106,7 +104,6 @@ h2 {
   font-size: 1rem;
   letter-spacing: 2px;
   font-weight: 100;
-
 }
 
 .btn.btn-secondary {
@@ -119,7 +116,6 @@ h2 {
   font-size: 1rem;
   letter-spacing: 2px;
   font-weight: 100;
-
 }
 
 .form-label {
@@ -131,7 +127,7 @@ h2 {
 }
 
 .btn.btn-create {
- margin-top: 0.5rem;
+  margin-top: 0.5rem;
   padding: 0.2rem 0.2rem;
   border-radius: 6px;
   border: none;
@@ -140,10 +136,9 @@ h2 {
   font-size: 1rem;
   letter-spacing: 2px;
   font-weight: 100;
-
 }
 
-.destination-form{
+.destination-form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,10 +152,7 @@ h2 {
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
-
 }
-
-
 
 .edit-form {
   height: auto;
@@ -170,18 +162,16 @@ h2 {
   justify-content: center;
   margin-top: 2rem;
   overflow: auto;
-  
 }
 
 .edit-container {
   background-color: rgba(250, 235, 215, 0.144);
-  
+
   padding: 20px;
   height: auto;
-   border-radius: 10px;
-   overflow: auto;
- 
-} 
+  border-radius: 10px;
+  overflow: auto;
+}
 
 /* .form {
   display: flex;
@@ -207,13 +197,12 @@ h2 {
 
 h3 {
   font-size: 30px;
- font-weight: 100;
- text-align: center;
- padding: 1rem;
+  font-weight: 100;
+  text-align: center;
+  padding: 1rem;
 }
 
 .btn.btn-edit {
-  
   padding: 0.2rem 0.2rem;
   border-radius: 6px;
   border: none;
@@ -227,11 +216,11 @@ h3 {
 /* .edit-container {
   background-color: rgba(250, 235, 215, 0.144);
   /* border: 1px solid #ccc; */
-  /* padding: 20px;
+/* padding: 20px;
   height: fit-content; */
-  /* border-radius: 10px;
+/* border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
-  /* overflow: hidden; */
+/* overflow: hidden; */
 /* } */
 
 .btn.btn-update {
@@ -250,7 +239,7 @@ h3 {
 .btn.btn-delete {
   justify-content: center;
   margin-top: 0.5rem;
-  padding: 0.2rem 0.2rem ;
+  padding: 0.2rem 0.2rem;
   border-radius: 6px;
   border: none;
   background-color: #b18fb097;
@@ -269,5 +258,4 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }

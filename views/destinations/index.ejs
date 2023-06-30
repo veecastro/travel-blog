@@ -11,13 +11,12 @@
           <h6 class="card-subtitle mb-2 text-muted"><%= destination.city %></h6>
           <a href="/destinations/<%= destination.id %>/show" class="btn btn-secondary">Details</a>
           <a href="/destinations/<%= destination.id %>/edit" class="btn btn-primary">Edit</a>
-         
-        </div>
+         </div>
       </div>
     </div>
   <% }) %>
 </div>
-
+<%- include('../partials/footer') %>
 <!-- form action="/destinations" method="GET">
   <button type="submit">Show All Destinations</button>
 </form>  -->
@@ -82,4 +81,4 @@
  <%- include('../partials/footer') %>  -->
 
 
-<%- include('../partials/footer') %>
+
