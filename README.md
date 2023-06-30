@@ -34,3 +34,6 @@ The Travelogue App is a comprehensive platform designed for avid travelers to do
 - Photo Carousel: Create visually appealing photo carousels with captions.
 
 These user options will enhance the functionality of your travelogue app, allowing users to easily add and track activities, capture food experiences, share travel tips, and create engaging photo carousels.
+
+### Wireframe
+<a href="https://imgur.com/CfKTrVc"><img src="https://i.imgur.com/CfKTrVcs.jpg" title="source: imgur.com" /></a>
