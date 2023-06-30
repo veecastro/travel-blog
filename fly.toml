@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for damp-dream-194 on 2023-06-29T10:41:55-04:00
+# fly.toml app configuration file generated for travelogue on 2023-06-29T23:27:10-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "damp-dream-194"
+app = "travelogue"
 primary_region = "iad"
 
 [http_service]
