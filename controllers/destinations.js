@@ -99,7 +99,7 @@ async function destinationDeletePost(req, res) {
   try {
     await Destination.findByIdAndRemove(req.params.id);
     // const destinations = await Destination.find({});
-    res.redirect("/destinations/");
+    res.redirect("/destinations/index");
   } catch (err) {
     console.log(err);
     res.render("error", { errorMsg: "Error deleting destination" });

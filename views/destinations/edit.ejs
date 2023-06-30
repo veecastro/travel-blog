@@ -19,7 +19,16 @@
       <input type="date" class="form-control" name="date" id="date" value="<%= destination.date.toISOString().substr(0, 10) %>" required>
     </div>
 
-    <h3>Photos</h3>
+    <button type="submit" class="btn btn-update">Update</button>
+    
+  </form>
+  
+  <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
+    <button type="submit" class="btn btn-delete">Delete</button>
+</form>
+</div>
+<%- include('../partials/footer') %>
+    <!-- <h3>Photos</h3>
     <div id="photos-container">
       <% destination.photos.forEach(function(photo, index) { %>
       <div class="photo">
@@ -34,16 +43,10 @@
         <img src="<%= photo.image %>" alt="Photo">
         <div>Caption: <%= photo.caption %></div>
       </div>
-      <% }) %>
+      <% }) %> -->
 
-      <form action="/destinations/<%= destination.id %>?_method=DELETE" method="POST">
-        <button type="submit" class="btn btn-delete">Delete</button>
-     
-      <button type="submit" class="btn btn-update">Update</button>
-    </form>
-  </form>
-</div>
- <%- include('../partials/footer') %>
+      
+   
 
     <!-- <div class="form-group">
       <label for="image">Photos</label>
